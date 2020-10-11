@@ -3,7 +3,7 @@ import java.lang.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
- import java.util.Scanner;
+import java.util.Scanner;
 
 import java.util.LinkedList;
 
@@ -42,16 +42,22 @@ public class mpopulate
         long finishmyapilength = System.nanoTime();
         long elapsedmyapilength = finishmyapilength - startmyapilength;
    
-    //search list my api  
         
-        String searchvalue =  "298853"; // value to search for using my api
+         //print LL my API
+		ll.printList();
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("insert value to search for: ");
+		String searchvalue = scan.nextLine();
+		
+        //search list my api  
         long startsearchmyapi = System.nanoTime();
-        ll.searchList(searchvalue);
+        ll.searchList(searchvalue); //put your search value in here 
         long finishsearchmyapi = System.nanoTime();
         long elapsedsearchmyapi = finishsearchmyapi - startsearchmyapi;
         
-        //print LL my API
-		ll.printList();
+       
 		
 		
 		BufferedReader reader1 = new BufferedReader(new FileReader(dataFile));
@@ -68,6 +74,10 @@ public class mpopulate
 		 long finishjavaapi =  System.nanoTime();
 		 long elapsedjavaapi =  finishjavaapi - startjavaapi;
 		 
+		 
+		
+		 
+		 
 	//walk/count number of entries java api	 
 		 long startjavaapilength = System.nanoTime();
 		 System.out.println(stringList.size() + ": number of cells in the list.");
@@ -79,7 +89,7 @@ public class mpopulate
 	// search using java api	
 		 Boolean javaapisearch; 
 		 long startsearchjavaapi = System.nanoTime();
-		 javaapisearch = stringList.contains("880337"); // input value to search for
+		 javaapisearch = stringList.contains(searchvalue); // input value to search for
 		 long finishsearchjavaapi = System.nanoTime();
 		 long elapsedsearchjavaapi = finishsearchjavaapi - startsearchjavaapi;
 		 System.out.println("Does the LL contain the value you inserted? " + javaapisearch);

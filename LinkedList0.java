@@ -65,7 +65,7 @@ public class LinkedList0{
 		public void searchList(String searchvalue)
 		{
 		 
-	        
+	        System.out.println("searchvalue=" + searchvalue );
 			String result = "Not found";
 			
 		    if (head == null) { 
@@ -82,10 +82,14 @@ public class LinkedList0{
 		    {
 		    	while (current.next != null)
 		        {
-		            if (current.next.vlue == searchvalue)
+		    		//System.out.println("searchvalue=" + searchvalue ); 
+		    		//System.out.println("head.vlue=" + head.vlue);
+		            System.out.println("current.vlue=" + current.vlue + " current.next.value=" + current.next.vlue);
+		    		
+		             if (current.next.vlue.equals(searchvalue) )
 		            {
-		                result = "Value: " + current.next.vlue; 
-		               
+		                System.out.println("in the if loop here");
+		            	result = "Value found!! Value: " + current.next.vlue; 
 		                break;
 		            }
 		            current = current.next;
@@ -98,7 +102,7 @@ public class LinkedList0{
 		
 		public void append()
 		{
-			String input = "544509"; // value you want to move to the end of the LL
+			String input = "156508"; // value you want to move to the end of the LL
 			
 			if (head == null)
 			{
